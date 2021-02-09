@@ -1,7 +1,7 @@
 name: 'Hello World'
 description: 'My Action Desc'
 inputs:
-  my-param2:
+  actionArgument:
     description: 'arg desc'
     required: true
     default: 'World'
@@ -9,4 +9,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.my-param3 }}
+    - ${{ inputs.actionArgument }}
