@@ -1,13 +1,14 @@
 name: My Action 1
-on: [push, pull_request]
+on: [push]
 jobs:
   lint:
     name: My Job 1
     runs-on: ubuntu-latest
     steps:
-      - name: Script 1
-        run: echo 1
-      - name: Script 2
-        run: |
-          echo 2
-          echo 3
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Custom action
+        uses: ./
+        id: my_action
+        with:
+          arg: 'hello'
