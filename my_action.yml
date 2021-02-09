@@ -1,10 +1,13 @@
 name: 'Hello World'
 description: 'My Action Desc'
 inputs:
-  actionArgument:
+  actionArgument:  # id of input
     description: 'arg desc'
     required: true
     default: 'World'
+outputs:
+  actionResul:  # id of output
+    description: 'arg2 desc'
 runs:
   using: 'docker'
   image: 'Dockerfile'
