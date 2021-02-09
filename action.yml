@@ -1,0 +1,15 @@
+name: 'Hello World'
+description: 'My Action Desc'
+inputs:
+  actionArgument:
+    description: "arg desc"
+    default: World
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.actionArgument }}
