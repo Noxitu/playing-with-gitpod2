@@ -1,0 +1,11 @@
+name: 'Hello World'
+description: 'My Action Desc'
+inputs:
+  arg:
+    description: 'arg desc'
+    required: true
+    default: 'World'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args: ['hello', ${{ inputs.arg }}, 'world']
