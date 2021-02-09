@@ -1,0 +1,17 @@
+name: Job With Output
+
+on: [push]
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate html
+        run: |
+          echo "<h1>Hello World</h1>" > "output.html"
+          cat "output.html"
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: page
+          path: output.html
