@@ -11,4 +11,5 @@ jobs:
         uses: ./
         id: my_action
         with:
-          my-param: 'hello'
+            actionArgument: hello world
+            args: hello
